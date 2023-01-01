@@ -31,9 +31,8 @@ data* fileInput(char* fileName, int* fileSize)
         return NULL;
     }
     *fileSize = sizeCount(file);
-    //data* out = (data*)calloc(*fileSize, sizeof(data));
-    data* out = (data*)calloc(301, 32);
-// printf("\nfile size %i\n", *fileSize);
+    data* out = (data*)calloc(*fileSize, sizeof(data));
+    //data* out = (data*)calloc(301, 32);
     for (data* i = out; i < out+sizeof(data)*(*fileSize); i+= sizeof(data))
     {
         if (fscanf(file, "%s %i %f %f", 
